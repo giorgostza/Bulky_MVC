@@ -4,6 +4,7 @@ using Bulky.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bulky.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240612105518_addCompanyTable")]
+    partial class addCompanyTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,38 +96,6 @@ namespace Bulky.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            City = "Athens",
-                            Name = "Kotsovolos",
-                            PhoneNumber = "2106897458",
-                            PostalCode = "15854",
-                            State = "Gr",
-                            StreetAddress = "Kifisias 13"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            City = "Patra",
-                            Name = "Public",
-                            PhoneNumber = "42589657",
-                            PostalCode = "25746",
-                            State = "Gr",
-                            StreetAddress = "Ermou 25"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            City = "Iraklio",
-                            Name = "Cosmote",
-                            PhoneNumber = "35896478",
-                            PostalCode = "35412",
-                            State = "Gr",
-                            StreetAddress = "Kolokotroni 256"
-                        });
                 });
 
             modelBuilder.Entity("Bulky.Models.Product", b =>
