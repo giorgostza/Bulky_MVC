@@ -40,16 +40,15 @@
                         </div>
 
 
+                       
+                        <div class="form-floating py-2 col-12">
 
-                        <div class="mb-3 row pt-1">
-                            <label asp-for="Product.Description" class="pt-0" style="font-weight:600"></label>
+                            <input asp-for="Product.Description" class="form-control border-0 shadow" />
+                            <label asp-for="Product.Description" class="ms-2"></label>
+
+                            <span asp-validation-for="Product.Description" class="text-danger"></span>
+
                         </div>
-                        <div class="border-1 border-dark" id="editor-container" style="height: 300px;"></div>
-                        <textarea asp-for="Product.Description" id="description" class="d-none" style="display:none ;"></textarea>
-
-
-
-
 
 
 
